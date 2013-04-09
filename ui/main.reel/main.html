@@ -38,6 +38,16 @@
                 }
             },
 
+            "articleCount": {
+                "prototype": "montage/ui/text.reel",
+                "properties": {
+                    "element": {"#": "articleCount"}
+                },
+                "bindings": {
+                    "value": {"<-": "@rssController.articles.length"}
+                }
+            },
+
             "articleList": {
                 "prototype": "montage/ui/repetition.reel",
                 "properties": {
@@ -74,6 +84,7 @@
     <div data-montage-id="main" class="Main">
         <nav>
             <input type="text" data-montage-id="searchTermInput">
+            <span data-montage-id="articleCount"></span> articles
             <ul data-montage-id="articleList">
                 <li>
                     <div data-montage-id="articlePreview"></div>
