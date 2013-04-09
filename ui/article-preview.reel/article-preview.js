@@ -12,7 +12,34 @@ var Montage = require("montage").Montage,
     @extends module:montage/ui/component.Component
 */
 exports.ArticlePreview = Montage.create(Component, /** @lends module:"ui/article-preview.reel".ArticlePreview# */ {
-    previewTextLength: {
+    article: {
+        value: null
+    },
+
+    previewLength: {
         value: 30
+    },
+
+    preview: {
+        value: ""
+    },
+
+    didCreate: {
+        value: function() {
+            this.addPathChangeListener("article.description", this);
+            this.addPathChangeListener("previewLength", this);
+        }
+    },
+
+    handlePathChange: {
+        value: function(value, key) {
+            if (key === "article.description" || key === "previewLength") {
+                if (this.article) {
+                    this.preview = this.article.description.substr(0, this.previewLength);
+                } else {
+                    this.preview = "";
+                }
+            }
+        }
     }
 });
