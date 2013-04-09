@@ -30,6 +30,16 @@
                 "value": {
                     "<-": "@owner.article.description.substr(0, @owner.previewTextLength) + (@owner.article.description.length > @owner.previewTextLength ? '...' : '')"}
             }
+        },
+
+        "isRead": {
+            "prototype": "matte/ui/input-checkbox.reel",
+            "properties": {
+                "element": {"#": "isRead"}
+            },
+            "bindings": {
+                "value": {"<->": "@owner.article.isRead"}
+            }
         }
     }
     </script>
@@ -38,6 +48,7 @@
     <div data-montage-id="article-preview" class="ArticlePreview">
         <div data-montage-id="title"></div>
         <div data-montage-id="previewText"></div>
+        <input type="checkbox" data-montage-id="isRead">
     </div>
 </body>
 </html>
