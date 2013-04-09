@@ -1,0 +1,19 @@
+{
+    "name": "rss-demo",
+    "version": "0.1.0",
+    "dependencies": {
+        "montage": "0.13.0-alpha",
+        "matte": "0.1.1-alpha",
+        "digit": "~0.1.0"
+    },
+    "mappings": {
+        "rss": "packages/rss"
+    },
+    "devDependencies": {
+        "montage-testing": "0.2.0-alpha"
+    },
+    "exclude": [
+        "run-tests.html",
+        "test"
+    ]
+}

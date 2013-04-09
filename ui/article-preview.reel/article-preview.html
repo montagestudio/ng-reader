@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="article-preview.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "article-preview"}
+            }
+        },
+
+        "title": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "title"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.article.title"}
+            }
+        },
+
+        "previewText": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "previewText"}
+            },
+            "bindings": {
+                "value": {
+                    "<-": "@owner.article.description.substr(0, @owner.previewTextLength) + (@owner.article.description.length > @owner.previewTextLength ? '...' : '')"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="article-preview" class="ArticlePreview">
+        <div data-montage-id="title"></div>
+        <div data-montage-id="previewText"></div>
+    </div>
+</body>
+</html>

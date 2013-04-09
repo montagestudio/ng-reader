@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="rss-view.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "rss-view"}
+            }
+        },
+
+        "title": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "title"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.article.title"}
+            }
+        },
+
+        "description": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "description"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.article.description"}
+            }
+        },
+
+        "author": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "author"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.article.author"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <section data-montage-id="rss-view" class="RssView">
+        <h2 data-montage-id="title"></h2>
+        <h3 data-montage-id="description"></h3>
+        <h3 data-montage-id="author"></h3>
+    </section>
+</body>
+</html>

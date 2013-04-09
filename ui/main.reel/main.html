@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Main</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <script type="text/montage-serialization">
+        {
+            "owner": {
+                "properties": {
+                    "element": {"#": "main"}
+                }
+            },
+
+            "rssController": {
+                "prototype": "rss/rss-controller",
+                "properties": {
+                    "sample": "trailers.json"
+                },
+                "bindings": {
+                    "filterTerm": {"<-": "@searchTermInput.value"}
+                }
+            },
+
+            "articleListController": {
+                "prototype": "montage/core/range-controller",
+                "bindings": {
+                    "content": {"<-": "@rssController.articles"}
+                }
+            },
+
+            "searchTermInput": {
+                "prototype": "matte/ui/input-text.reel",
+                "properties": {
+                    "element": {"#": "searchTermInput"}
+                }
+            },
+
+            "articleList": {
+                "prototype": "montage/ui/repetition.reel",
+                "properties": {
+                    "element": {"#": "articleList"},
+                    "isSelectionEnabled": true,
+                    "rssController": {"@": "rssController"},
+                    "contentController": {"@": "articleListController"}
+                }
+            },
+
+            "articlePreview": {
+                "prototype": "ui/article-preview.reel",
+                "properties": {
+                    "element": {"#": "articlePreview"}
+                },
+                "bindings": {
+                    "article": {"<-": "@articleList.objectAtCurrentIteration"}
+                }
+            },
+
+            "rssView": {
+                "prototype": "rss/ui/rss-view.reel",
+                "properties": {
+                    "element": {"#": "rssView"}
+                },
+                "bindings": {
+                    "article": {"<-": "@articleListController.selection.0"}
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div data-montage-id="main" class="Main">
+        <nav>
+            <input type="text" data-montage-id="searchTermInput">
+            <ul data-montage-id="articleList">
+                <li>
+                    <div data-montage-id="articlePreview"></div>
+                </li>
+            </ul>
+        </nav>
+        <div data-montage-id="rssView"></div>
+    </div>
+</body>
+</html>
