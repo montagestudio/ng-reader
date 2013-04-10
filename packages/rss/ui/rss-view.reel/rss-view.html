@@ -39,6 +39,28 @@
             "bindings": {
                 "value": {"<-": "@owner.article.author"}
             }
+        },
+
+        "media": {
+            "prototype": "montage/ui/substitution.reel",
+            "properties": {
+                "element": {"#": "media"}
+            },
+            "bindings": {
+                "switchValue": {
+                    "<-": "(@owner.article.media.type == 'image/jpeg' || @owner.article.media.type == 'image/gif' || @owner.article.media.type == 'image/png') ? 'image' : null"
+                }
+            }
+        },
+
+        "image": {
+            "prototype": "matte/ui/image.reel",
+            "properties": {
+                "element": {"#": "image"}
+            },
+            "bindings": {
+                "src": {"<-": "@owner.article.media.url"}
+            }
         }
     }
     </script>
@@ -48,6 +70,9 @@
         <h2 data-montage-id="title"></h2>
         <h3 data-montage-id="description"></h3>
         <h3 data-montage-id="author"></h3>
+        <div data-montage-id="media">
+            <img data-arg="image" data-montage-id="image">
+        </div>
     </section>
 </body>
 </html>
