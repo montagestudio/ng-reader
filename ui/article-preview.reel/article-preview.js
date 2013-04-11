@@ -18,28 +18,5 @@ exports.ArticlePreview = Montage.create(Component, /** @lends module:"ui/article
 
     previewLength: {
         value: 30
-    },
-
-    preview: {
-        value: ""
-    },
-
-    didCreate: {
-        value: function() {
-            this.addPathChangeListener("article.description", this);
-            this.addPathChangeListener("previewLength", this);
-        }
-    },
-
-    handlePathChange: {
-        value: function(value, key) {
-            if (key === "article.description" || key === "previewLength") {
-                if (this.article) {
-                    this.preview = this.article.description.substr(0, this.previewLength);
-                } else {
-                    this.preview = "";
-                }
-            }
-        }
     }
 });
