@@ -12,7 +12,7 @@
         },
 
         "title": {
-            "prototype": "montage/ui/text.reel",
+            "prototype": "digit/ui/title.reel",
             "properties": {
                 "element": {"#": "title"}
             },
@@ -22,7 +22,7 @@
         },
 
         "description": {
-            "prototype": "montage/ui/text.reel",
+            "prototype": "digit/ui/text.reel",
             "properties": {
                 "element": {"#": "description"}
             },
@@ -32,7 +32,7 @@
         },
 
         "author": {
-            "prototype": "montage/ui/text.reel",
+            "prototype": "digit/ui/text.reel",
             "properties": {
                 "element": {"#": "author"}
             },
@@ -48,7 +48,7 @@
             },
             "bindings": {
                 "switchValue": {
-                    "<-": "(@owner.article.media.type == 'image/jpeg' || @owner.article.media.type == 'image/gif' || @owner.article.media.type == 'image/png') ? 'image' : null"
+                    "<-": "(@owner.article.media.type == 'image/jpeg' || @owner.article.media.type == 'image/gif' || @owner.article.media.type == 'image/png') ? 'image' : (@owner.article.media.type == 'video/quicktime' ? 'video' : '')"
                 }
             }
         },
@@ -61,17 +61,33 @@
             "bindings": {
                 "src": {"<-": "@owner.article.media.url"}
             }
+        },
+
+        "mediaController": {
+            "prototype": "montage/core/media-controller",
+            "bindings": {
+                "mediaSrc": {"<-": "@owner.article.media.url"}
+            }
+        },
+        
+        "video": {
+            "prototype": "matte/ui/video-player.reel",
+            "properties": {
+                "element": {"#": "video"},
+                "controller": {"@": "mediaController"}
+            }
         }
     }
     </script>
 </head>
 <body>
-    <section data-montage-id="rss-view" class="RssView">
-        <h2 data-montage-id="title"></h2>
-        <h3 data-montage-id="description"></h3>
-        <h3 data-montage-id="author"></h3>
+    <section data-montage-id="rss-view" class="rss-RssView">
+        <span data-montage-id="title"></span>
+        <p data-montage-id="description"></p>
+        <span data-montage-id="author"></span>
         <div data-montage-id="media">
             <img data-arg="image" data-montage-id="image">
+            <video data-arg="video" data-montage-id="video" controls></video>
         </div>
     </section>
 </body>
