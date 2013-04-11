@@ -17,7 +17,7 @@
             "rssController": {
                 "prototype": "rss/rss-controller",
                 "properties": {
-                    "sample": "trailers.json"
+                    "sample": "ng-podd.json"
                 },
                 "bindings": {
                     "filterTerm": {"<-": "@searchTermInput.value"}
@@ -32,14 +32,15 @@
             },
 
             "searchTermInput": {
-                "prototype": "matte/ui/input-text.reel",
+                "prototype": "digit/ui/input-text.reel",
                 "properties": {
-                    "element": {"#": "searchTermInput"}
+                    "element": {"#": "searchTermInput"},
+                    "placeholder": "Filter"
                 }
             },
 
             "articleCount": {
-                "prototype": "montage/ui/text.reel",
+                "prototype": "digit/ui/badge.reel",
                 "properties": {
                     "element": {"#": "articleCount"}
                 },
@@ -49,11 +50,10 @@
             },
 
             "articleList": {
-                "prototype": "montage/ui/repetition.reel",
+                "prototype": "digit/ui/list.reel",
                 "properties": {
                     "element": {"#": "articleList"},
                     "isSelectionEnabled": true,
-                    "rssController": {"@": "rssController"},
                     "contentController": {"@": "articleListController"}
                 }
             },
@@ -74,7 +74,7 @@
                 "properties": {
                     "element": {"#": "articlePreviewLength"},
                     "min": 0,
-                    "value": 50,
+                    "value": 0,
                     "max": 100
                 }
             },
@@ -92,18 +92,16 @@
     </script>
 </head>
 <body>
-    <div data-montage-id="main" class="Main">
-        <nav>
+    <div data-montage-id="main" class="rssDemo-Main">
+        <nav class="rssDemo-Main-nav">
             <input type="text" data-montage-id="searchTermInput">
             <span data-montage-id="articleCount"></span> articles
-            <ul data-montage-id="articleList">
-                <li>
-                    <div data-montage-id="articlePreview"></div>
-                </li>
+            <ul data-montage-id="articleList" class="rssDemo-Main-articleList">
+                <li data-montage-id="articlePreview"></li>
             </ul>
             <input type="range" data-montage-id="articlePreviewLength">
         </nav>
-        <div data-montage-id="rssView"></div>
+        <div data-montage-id="rssView" class="rssDemo-Main-rssView"></div>
     </div>
 </body>
 </html>

@@ -1,1 +1,34 @@
-.Main {}
+.rssDemo-Main {
+
+}
+
+.rssDemo-Main-articleList {
+    position: relative;
+    width: 100%;
+}
+
+.rssDemo-Main-nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30%
+}
+
+.rssDemo-Main-rssView {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 70%
+}
+
+/**
+ * TODO: no idea here to put this, should there be a global digit stylesheet?
+ */
+[data-montage-skin="light"] {
+    .background: #b3b3b3;
+    background: hsla(0,0%,90%,.9);
+}
+
+[data-montage-skin="dark"] {
+    background: #666;
+}

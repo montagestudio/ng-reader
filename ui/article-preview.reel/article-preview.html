@@ -12,7 +12,7 @@
         },
 
         "title": {
-            "prototype": "montage/ui/text.reel",
+            "prototype": "digit/ui/text.reel",
             "properties": {
                 "element": {"#": "title"}
             },
@@ -22,7 +22,7 @@
         },
 
         "previewText": {
-            "prototype": "montage/ui/text.reel",
+            "prototype": "digit/ui/text.reel",
             "properties": {
                 "element": {"#": "previewText"}
             },
@@ -33,22 +33,26 @@
         },
 
         "isRead": {
-            "prototype": "matte/ui/input-checkbox.reel",
+            "prototype": "digit/ui/input-checkbox.reel",
             "properties": {
                 "element": {"#": "isRead"}
             },
             "bindings": {
-                "value": {"<->": "@owner.article.isRead"}
+                "checked": {"<->": "@owner.article.isRead"}
             }
         }
     }
     </script>
 </head>
 <body>
-    <div data-montage-id="article-preview" class="ArticlePreview">
-        <div data-montage-id="title"></div>
-        <div data-montage-id="previewText"></div>
-        <input type="checkbox" data-montage-id="isRead">
-    </div>
+    <ul>
+        <li data-montage-id="article-preview" class="digit-ListItem">
+            <span data-montage-id="title"></span>
+            <div data-montage-id="previewText"></div>
+            <span class="montage-List-item-cell">
+                <input type="checkbox" data-montage-id="isRead">
+            </span>
+        </li>
+    </ul>
 </body>
 </html>
