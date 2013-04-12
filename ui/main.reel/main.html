@@ -96,14 +96,19 @@
 </head>
 <body>
     <div data-montage-id="main" class="rssDemo-Main">
-        <nav class="rssDemo-Main-nav" data-montage-skin="dark">
-            <input type="text" data-montage-id="searchTermInput">
-            <span data-montage-id="articleCount"></span> articles
+        <aside class="rssDemo-Main-aside" data-montage-skin="dark">
+            <header class="rssDemo-Main-aside-header">
+                <img class="rssDemo-Main-aside-header-logo" src="assets/images/logo.png" alt="logo" />
+                <input data-montage-id="searchTermInput" class="rssDemo-Main-aside-header-filter" type="text">
+                <span data-montage-id="articleCount" class="rssDemo-Main-aside-header-count"></span>
+            </header>
             <ul data-montage-id="articleList" class="rssDemo-Main-articleList">
                 <li data-montage-id="articlePreview"></li>
             </ul>
-            <input type="range" data-montage-id="articlePreviewLength">
-        </nav>
+            <footer class="rssDemo-Main-aside-footer">
+                <input type="range" data-montage-id="articlePreviewLength">
+            </footer>
+        </aside>
         <div data-montage-id="rssView" class="rssDemo-Main-rssView" data-montage-skin="light"></div>
     </div>
 </body>

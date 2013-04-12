@@ -2,17 +2,62 @@
 
 }
 
-.rssDemo-Main-articleList {
-    position: relative;
-    width: 100%;
-}
-
-.rssDemo-Main-nav {
+.rssDemo-Main-aside {
     position: absolute;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
     left: 0;
     top: 0;
     bottom: 0;
     width: 30%
+}
+
+.rssDemo-Main-articleList {
+    -webkit-box-flex: 1;
+    position: relative;
+    width: 100%;
+    background: hsl(0,0%,20%);
+}
+
+
+/* Header ------------------------------------------- */
+
+.rssDemo-Main-aside-header {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    padding: 15px;
+    background: -webkit-linear-gradient( hsl(0,0%,50%), hsl(0,0%,40%) );
+    border-bottom: 1px solid hsla(0,0%,0%,0.7);
+}
+
+.rssDemo-Main-aside-header-logo {
+    display: block;
+    margin: 0;
+    width: 88px;
+}
+
+.rssDemo-Main-aside-header-filter {
+    display: block;
+    margin: 0 15px;
+    -webkit-box-flex: 1;
+}
+
+.rssDemo-Main-aside-header-count {
+    display: block;
+    margin: 0;
+    line-height: 33px;
+    padding: 0 12px;
+}
+
+
+/* Footer ------------------------------------------- */
+
+.rssDemo-Main-aside-footer {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    padding: 15px;
+    background: -webkit-linear-gradient( hsl(0,0%,50%), hsl(0,0%,40%) );
+    border-top: 1px solid hsla(0,0%,100%,0.3);
 }
 
 .rssDemo-Main-rssView {
@@ -29,10 +74,9 @@
  * TODO: no idea here to put this, should there be a global digit stylesheet?
  */
 [data-montage-skin="light"] {
-    .background: #b3b3b3;
-    background: hsla(0,0%,90%,.9);
+    background: hsl(0,0%,90%);
 }
 
 [data-montage-skin="dark"] {
-    background: #666;
+    background: hsl(0,0%,90%);
 }
