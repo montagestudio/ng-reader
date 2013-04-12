@@ -23,6 +23,33 @@ exports.RssController = Montage.create(Montage, {
         value: null
     },
 
+    feeds: {
+        value: [{
+            "name": "Apple Trailers",
+            "feed": "trailers"
+        }, {
+            "name": "Photo of the Day",
+            "feed": "ng-podd"
+        }]
+    },
+
+    _feed: {
+        value: null
+    },
+
+    feed: {
+        set: function(value) {
+            if (value) {
+                this._feed = value;
+                this.sample = value + ".json";
+            }
+        },
+
+        get: function() {
+            return this._feed;
+        }
+    },
+
     sample: {
         set: function(value) {
             var self = this;
@@ -49,33 +76,11 @@ exports.RssController = Montage.create(Montage, {
 
     didCreate: {
         value: function () {
-//            this.defineBinding("articles", {"<-":
-//                "$_articles.filter{" +
-//                    "description.indexOf($filterTerm) >= 0" +
-//                "}"
-//            });
-            
-            this.addOwnPropertyChangeListener("_articles", this, false);
-            this.addOwnPropertyChangeListener("filterTerm", this, false);
-            this.addOwnPropertyChangeListener("articleCount", this, false);
-        }
-    },
-    
-    handlePropertyChange: {
-        value: function(value, key) {
-            var self = this;
-
-            if ((key === "_articles" || key === "filterTerm" ||
-                key === "articleCount")) {
-                if (this._articles) {
-                    this.articles = this._articles.filter(function(article) {
-                        return !self.filterTerm ||
-                            article.description.indexOf(self.filterTerm) >= 0;
-                    }).slice(0, this.articleCount);
-                } else {
-                    this.articles = [];
-                }
-            }
+            this.defineBinding("articles", {"<-":
+                "$_articles.filter{" +
+                    "description.indexOf($filterTerm ?? '') >= 0" +
+                "}"
+            });
         }
     }
 });
