@@ -16,11 +16,9 @@
 
             "rssController": {
                 "prototype": "rss/rss-controller",
-                "properties": {
-                    "sample": "ng-podd.json"
-                },
                 "bindings": {
-                    "filterTerm": {"<-": "@searchTermInput.value"}
+                    "filterTerm": {"<-": "@searchTermInput.value"},
+                    "feed": {"<->": "@feedSelect.value"}
                 }
             },
 
@@ -31,6 +29,13 @@
                 },
                 "bindings": {
                     "content": {"<-": "@rssController.articles"}
+                }
+            },
+
+            "feedSelectController": {
+                "prototype": "montage/core/range-controller",
+                "bindings": {
+                    "content": {"<-": "@rssController.feeds"}
                 }
             },
 
@@ -49,6 +54,16 @@
                 },
                 "bindings": {
                     "value": {"<-": "@rssController.articles.length"}
+                }
+            },
+
+            "feedSelect": {
+                "prototype": "digit/ui/select.reel",
+                "properties": {
+                    "element": {"#": "feedSelect"},
+                    "contentController": {"@": "feedSelectController"},
+                    "textPropertyPath": "name",
+                    "valuePropertyPath": "feed"
                 }
             },
 
@@ -102,6 +117,7 @@
                 <input data-montage-id="searchTermInput" class="rssDemo-Main-aside-header-filter" type="text">
                 <span data-montage-id="articleCount" class="rssDemo-Main-aside-header-count"></span>
             </header>
+            <select data-montage-id="feedSelect"></select>
             <ul data-montage-id="articleList" class="rssDemo-Main-articleList">
                 <li data-montage-id="articlePreview"></li>
             </ul>
