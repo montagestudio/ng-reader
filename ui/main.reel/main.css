@@ -60,6 +60,13 @@
     border-top: 1px solid hsla(0,0%,100%,0.3);
 }
 
+.rssDemo-Main-aside-footer-slider {
+    display: block;
+    margin-left: 15px;
+    -webkit-box-flex: 1;
+}
+
+
 .rssDemo-Main-rssView {
     box-sizing: border-box;
     position: absolute;
