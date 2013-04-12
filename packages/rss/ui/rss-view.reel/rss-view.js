@@ -12,5 +12,16 @@ var Montage = require("montage").Montage,
     @extends module:montage/ui/component.Component
 */
 exports.RssView = Montage.create(Component, /** @lends module:"ui/rss-view.reel".RssView# */ {
+    _article: {value: null},
 
+    article: {
+        set: function(value) {
+            if (value) {
+                this._article = value;
+            }
+        },
+        get: function() {
+            return this._article;
+        }
+    }
 });
