@@ -26,6 +26,9 @@
 
             "articleListController": {
                 "prototype": "montage/core/range-controller",
+                "properties": {
+                    "avoidsEmptySelection": true
+                },
                 "bindings": {
                     "content": {"<-": "@rssController.articles"}
                 }
