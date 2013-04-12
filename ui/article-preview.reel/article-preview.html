@@ -31,17 +31,8 @@
                     "<-": "@owner.article.description.substr(0, @owner.previewLength)"
                 }
             }
-        },
-
-        "isRead": {
-            "prototype": "digit/ui/input-checkbox.reel",
-            "properties": {
-                "element": {"#": "isRead"}
-            },
-            "bindings": {
-                "checked": {"<->": "@owner.article.isRead"}
-            }
         }
+        
     }
     </script>
 </head>
@@ -50,9 +41,6 @@
         <li data-montage-id="article-preview" class="ArticlePreview digit-ListItem">
             <label data-montage-id="title"></label>
             <label data-montage-id="previewText"></label>
-            <div class="digit-List-item-cell">
-                <input type="checkbox" data-montage-id="isRead">
-            </div>
         </li>
     </ul>
 </body>
