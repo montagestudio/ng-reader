@@ -4,7 +4,8 @@
     @requires montage/ui/component
 */
 var Montage = require("montage").Montage,
-    Component = require("montage/ui/component").Component;
+    Component = require("montage/ui/component").Component,
+    Promise = require("montage/core/promise").Promise;
 
 /**
     Description TODO
@@ -16,9 +17,14 @@ exports.RssView = Montage.create(Component, /** @lends module:"ui/rss-view.reel"
 
     article: {
         set: function(value) {
+            var self = this;
+
             if (value) {
-                this._article = value;
-                value.isRead = true;
+                Promise.nextTick(function() {
+                    self._article = value;
+                    value.isRead = true;
+                    self.dispatchOwnPropertyChange("article", value);
+                });
             }
         },
         get: function() {
