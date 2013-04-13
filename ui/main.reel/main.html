@@ -87,16 +87,6 @@
                 }
             },
 
-            "articlePreviewLength": {
-                "prototype": "matte/ui/input-range.reel",
-                "properties": {
-                    "element": {"#": "articlePreviewLength"},
-                    "min": 0,
-                    "value": 0,
-                    "max": 100
-                }
-            },
-
             "rssView": {
                 "prototype": "rss/ui/rss-view.reel",
                 "properties": {
@@ -113,15 +103,14 @@
     <div data-montage-id="main" class="rssDemo-Main">
         <aside class="rssDemo-Main-aside" data-montage-skin="dark">
             <header class="rssDemo-Main-aside-header">
-                <input data-montage-id="searchTermInput" class="rssDemo-Main-aside-header-filter" type="text">
+                <select data-montage-id="feedSelect" class="rssDemo-Main-aside-header-select"></select>
                 <span data-montage-id="articleCount" class="rssDemo-Main-aside-header-count"></span>
             </header>
             <ul data-montage-id="articleList" class="rssDemo-Main-articleList">
                 <li data-montage-id="articlePreview"></li>
             </ul>
             <footer class="rssDemo-Main-aside-footer">
-                <select data-montage-id="feedSelect"></select>
-                <input data-montage-id="articlePreviewLength" class="rssDemo-Main-aside-footer-slider" type="range">
+                <input data-montage-id="searchTermInput" class="rssDemo-Main-aside-footer-filter" type="text">
             </footer>
         </aside>
         <div data-montage-id="rssView" class="rssDemo-Main-rssView" data-montage-skin="light"></div>
