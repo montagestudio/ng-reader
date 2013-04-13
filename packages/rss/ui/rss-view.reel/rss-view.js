@@ -18,6 +18,7 @@ exports.RssView = Montage.create(Component, /** @lends module:"ui/rss-view.reel"
         set: function(value) {
             if (value) {
                 this._article = value;
+                value.isRead = true;
             }
         },
         get: function() {
