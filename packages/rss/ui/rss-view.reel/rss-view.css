@@ -4,7 +4,7 @@
     -webkit-overflow-scrolling: touch;
     background: hsl(60, 62%, 93%);
         
-    -webkit-animation: fx .3s;
+    -webkit-animation: fx .3s cubic-bezier(0.030, 0.440, 0.250, 1.000);
 }
 
 @-webkit-keyframes fx {

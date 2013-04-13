@@ -20,6 +20,17 @@
     background: hsl(0,0%,20%);
 }
 
+.rssDemo-Main-articleList .digit-List-repetition {
+    -webkit-animation: list-fx .3s cubic-bezier(0.030, 0.440, 0.250, 1.000);
+}
+
+@-webkit-keyframes list-fx {
+    from {
+        -webkit-transform: translate3d(0,66px,0);
+        opacity: 0;
+    }
+}
+
 
 /* Header ------------------------------------------- */
 
