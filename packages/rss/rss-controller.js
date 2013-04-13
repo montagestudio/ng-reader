@@ -91,11 +91,33 @@ exports.RssController = Montage.create(Montage, {
         value: function () {
             this._samples = Object.create(null);
 
-            this.defineBinding("articles", {"<-":
-                "$_articles.filter{" +
-                    "description.indexOf($filterTerm ?? '') >= 0" +
-                "}"
-            });
+//            this.defineBinding("articles", {"<-":
+//                "$_articles.filter{" +
+//                    "description.indexOf($filterTerm ?? '') >= 0" +
+//                "}"
+//            });
+
+            this.addOwnPropertyChangeListener("_articles", this, false);
+            this.addOwnPropertyChangeListener("filterTerm", this, false);
+            this.addOwnPropertyChangeListener("articleCount", this, false);
+        }
+    },
+
+    handlePropertyChange: {
+        value: function(value, key) {
+            var self = this;
+
+            if ((key === "_articles" || key === "filterTerm" ||
+                key === "articleCount")) {
+                if (this._articles) {
+                    this.articles = this._articles.filter(function(article) {
+                        return !self.filterTerm ||
+                            article.description.indexOf(self.filterTerm) >= 0;
+                    }).slice(0, this.articleCount);
+                } else {
+                    this.articles = [];
+                }
+            }
         }
     }
 });
