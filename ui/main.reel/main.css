@@ -73,6 +73,14 @@
 }
 
 /**
+ * ListItem ArticlePreview Hightlight
+ */
+
+[data-montage-skin="dark"] .highlight {
+    box-shadow: inset 2px 0 0 hsl(210,100%,50%);
+}
+
+/**
  * TODO: no idea here to put this, should there be a global digit stylesheet?
  */
 [data-montage-skin="light"] {
