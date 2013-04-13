@@ -12,11 +12,4 @@ var Montage = require("montage").Montage,
     @extends module:montage/ui/component.Component
 */
 exports.ArticlePreview = Montage.create(Component, /** @lends module:"ui/article-preview.reel".ArticlePreview# */ {
-    article: {
-        value: null
-    },
-
-    previewLength: {
-        value: 30
-    }
 });

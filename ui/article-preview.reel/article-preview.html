@@ -22,20 +22,7 @@
             "bindings": {
                 "value": {"<-": "@owner.article.title"}
             }
-        },
-
-        "previewText": {
-            "prototype": "digit/ui/text.reel",
-            "properties": {
-                "element": {"#": "previewText"}
-            },
-            "bindings": {
-                "value": {
-                    "<-": "@owner.article.description.substr(0, @owner.previewLength)"
-                }
-            }
         }
-        
     }
     </script>
 </head>
@@ -43,7 +30,6 @@
     <ul>
         <li data-montage-id="article-preview" class="ArticlePreview digit-ListItem">
             <label data-montage-id="title"></label>
-            <label data-montage-id="previewText"></label>
         </li>
     </ul>
 </body>
