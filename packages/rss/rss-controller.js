@@ -112,7 +112,8 @@ exports.RssController = Montage.create(Montage, {
                 if (this._articles) {
                     this.articles = this._articles.filter(function(article) {
                         return !self.filterTerm ||
-                            article.description.indexOf(self.filterTerm) >= 0;
+                            article.title.toLowerCase()
+                                .indexOf(self.filterTerm.toLowerCase()) >= 0;
                     }).slice(0, this.articleCount);
                 } else {
                     this.articles = [];
