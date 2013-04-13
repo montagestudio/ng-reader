@@ -53,7 +53,7 @@
                     "element": {"#": "articleCount"}
                 },
                 "bindings": {
-                    "value": {"<-": "@rssController.articles.length"}
+                    "value": {"<-": "@rssController.articles.filter{!isRead}.length"}
                 }
             },
 
