@@ -1,3 +1,75 @@
 .rss-RssView {
-
+    position: relative;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    background: hsl(60, 62%, 93%);
+        
+    -webkit-animation: fx .3s;
 }
+
+@-webkit-keyframes fx {
+    from {
+        -webkit-transform: translate3d(0,-66px,0);
+        opacity: 0;
+    }
+}
+
+.rss-RssView-header {
+    height: 66px;
+    background: black url(../../assets/images/logo.png) no-repeat;
+    background-size: auto 26px;
+    background-position: 30px center;
+}
+
+
+/* Article -------------------------------- */
+
+.rss-RssView-article {
+    margin: 30px;
+    padding: 30px 30px 20px 30px;
+    border: 1px dashed hsla(0,0%,0%,.15);
+}
+
+.rss-RssView-article-title {
+    margin: 0 0 20px 0;
+    line-height: 1;
+    font-size: 24px;
+    font-weight: normal;
+    color: hsl(0,0%,40%);
+    text-shadow: 0 2px 2px hsla(0,0%,100%,.8);
+}
+
+.rss-RssView-article-media {
+    float: left;
+    margin: 0 20px 20px 0;
+}
+
+.rss-RssView-article-description {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.4;
+    text-rendering: optimizeLegibility;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    color: hsl(0,0%,30%);
+    text-shadow: 0 1px 0 hsla(0,0%,100%,.6);
+}
+
+.rss-RssView-article-author {
+    clear: left;
+    margin: 20px 0;
+    color: hsl(0,0%,60%);
+    font-style: italic;
+}
+
+
+/* BG -------------------------------- */
+
+/*.rss-RssView-bg {
+    width: 100%;
+    height: 200px;
+    background: url(../../assets/images/logo-small.png) no-repeat center top;
+    background-size: auto 160px;
+    opacity: .1;
+    -webkit-filter: contrast(5%);
+}*/

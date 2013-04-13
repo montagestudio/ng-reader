@@ -64,10 +64,11 @@
 }
 
 
+/* Detail view ------------------------------------------- */
+
 .rssDemo-Main-rssView {
     box-sizing: border-box;
     position: absolute;
-    padding: 30px;
     right: 0;
     top: 0;
     bottom: 0;

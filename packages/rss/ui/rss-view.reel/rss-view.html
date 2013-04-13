@@ -82,13 +82,17 @@
 </head>
 <body>
     <section data-montage-id="rss-view" class="rss-RssView">
-        <span data-montage-id="title"></span>
-        <p data-montage-id="description"></p>
-        <span data-montage-id="author"></span>
-        <div data-montage-id="media">
-            <img data-arg="image" data-montage-id="image">
-            <video data-arg="video" data-montage-id="video" controls></video>
-        </div>
+        <header class="rss-RssView-header"></header>
+        <article class="rss-RssView-article">
+            <h2 data-montage-id="title" class="rss-RssView-article-title"></h2>
+            <div data-montage-id="media" class="rss-RssView-article-media">
+                <img data-arg="image" data-montage-id="image" class="rss-RssView-image">
+                <video data-arg="video" data-montage-id="video" controls></video>
+            </div>
+            <p data-montage-id="description" class="rss-RssView-article-description"></p>
+            <div data-montage-id="author" class="rss-RssView-article-author"></div>
+        </article>
+        <div class="rss-RssView-bg"></div>
     </section>
 </body>
 </html>
