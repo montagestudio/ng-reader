@@ -21,11 +21,14 @@ exports.RssController = Montage.create(Montage, {
 
     feeds: {
         value: [{
-            "name": "Apple Trailers",
-            "feed": "trailers"
-        }, {
             "name": "Photo of the Day",
             "feed": "podd"
+        }, {
+            "name": "Space",
+            "feed": "space"
+        }, {
+            "name": "Kids",
+            "feed": "kids"
         }]
     },
 
