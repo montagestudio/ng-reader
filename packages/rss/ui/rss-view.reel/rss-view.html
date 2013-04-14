@@ -23,12 +23,13 @@
         },
 
         "description": {
-            "prototype": "digit/ui/text.reel",
+            "prototype": "matte/ui/dynamic-element.reel",
             "properties": {
-                "element": {"#": "description"}
+                "element": {"#": "description"},
+                "allowedTagNames": ["p", "i", "h3"]
             },
             "bindings": {
-                "value": {"<-": "@owner.article.description"}
+                "innerHTML": {"<-": "@owner.article.description"}
             }
         },
 
