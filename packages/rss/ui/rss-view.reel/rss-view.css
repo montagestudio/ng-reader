@@ -76,6 +76,19 @@
     max-width: 50%;
 }
 
+.rss-RssView.fullscreen {
+    width: auto;
+    left: 0;
+}
+
+.rss-RssView.fullscreen .rss-RssView-article img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
 /* BG -------------------------------- */
 
 .rss-RssView-footer {

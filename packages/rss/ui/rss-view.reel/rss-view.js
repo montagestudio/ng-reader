@@ -36,5 +36,19 @@ exports.RssView = Montage.create(Component, /** @lends module:"ui/rss-view.reel"
         get: function() {
             return this._article;
         }
+    },
+
+    _enterFullscreenMode: {
+        value: function() {
+            this.classList.toggle("fullscreen");
+        }
+    },
+
+    templateDidLoad: {
+        value: function() {
+            var element = this.templateObjects.image.element;
+
+            element.addEventListener("touchstart", this._enterFullscreenMode.bind(this), false);
+        }
     }
 });
