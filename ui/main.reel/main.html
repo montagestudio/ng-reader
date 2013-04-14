@@ -28,7 +28,8 @@
                     "avoidsEmptySelection": true
                 },
                 "bindings": {
-                    "content": {"<-": "@rssController.articles"}
+                    "content": {"<-": "@rssController.articles"},
+                    "selection": {"<-": "selection.length > 0 ? selection : [content[0]]"}
                 }
             },
 
