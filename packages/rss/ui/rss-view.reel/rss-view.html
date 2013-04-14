@@ -50,7 +50,7 @@
             },
             "bindings": {
                 "switchValue": {
-                    "<-": "(@owner.article.media.type == 'image/jpeg' || @owner.article.media.type == 'image/gif' || @owner.article.media.type == 'image/png') ? 'image' : (@owner.article.media.type == 'video/quicktime' ? 'video' : '')"
+                    "<-": "(@owner.article.media.type == 'image/jpeg' || @owner.article.media.type == 'image/gif' || @owner.article.media.type == 'image/png') ? 'image' : (@owner.article.media.type == 'video/webm' ? 'video' : '')"
                 }
             }
         },
@@ -64,19 +64,14 @@
                 "src": {"<-": "@owner.article.media.url"}
             }
         },
-
-        "mediaController": {
-            "prototype": "montage/core/media-controller",
-            "bindings": {
-                "mediaSrc": {"<-": "@owner.article.media.url"}
-            }
-        },
         
         "video": {
-            "prototype": "matte/ui/video-player.reel",
+            "prototype": "digit/ui/video.reel",
             "properties": {
-                "element": {"#": "video"},
-                "controller": {"@": "mediaController"}
+                "element": {"#": "video"}
+            },
+            "bindings": {
+                "src": {"<-": "@owner.article.media.url"}
             }
         }
     }
