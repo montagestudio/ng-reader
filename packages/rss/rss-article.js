@@ -1,6 +1,10 @@
 var Montage = require("montage").Montage;
 
 exports.RssArticle = Montage.create(Montage, {
+    feed: {
+        value: null
+    },
+
     title: {
         value: null
     },
@@ -30,7 +34,8 @@ exports.RssArticle = Montage.create(Montage, {
     },
 
     init: {
-        value: function(rssData) {
+        value: function(rssData, feed) {
+            this.feed = feed;
             this.title = rssData.title;
             this.description = rssData.description;
             this.link = rssData.link;

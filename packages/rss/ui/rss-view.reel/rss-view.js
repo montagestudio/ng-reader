@@ -21,8 +21,14 @@ exports.RssView = Montage.create(Component, /** @lends module:"ui/rss-view.reel"
 
             if (value) {
                 Promise.nextTick(function() {
+                    if (self._article) {
+                        self.classList.remove(self._article.feed);
+                    }
+                    self.classList.add(value.feed);
+
                     self._article = value;
                     value.isRead = true;
+                    self.needsDraw = true;
                     self.dispatchOwnPropertyChange("article", value);
                 });
             }

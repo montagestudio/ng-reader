@@ -70,7 +70,7 @@ exports.RssController = Montage.create(Montage, {
                     self.title = rssData.title;
                     for (var i = 0; i < rssData.articles.length; i++) {
                         articles.push(
-                            RssArticle.create().init(rssData.articles[i])
+                            RssArticle.create().init(rssData.articles[i], self.feed)
                         );
                     }
                     self._articles = articles;

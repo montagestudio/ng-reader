@@ -67,6 +67,14 @@
     font-style: italic;
 }
 
+.rss-RssView.podd .rss-RssView-article img {
+    width: 100%;
+}
+
+.rss-RssView.space .rss-RssView-article img,
+.rss-RssView.kids .rss-RssView-article img {
+    max-width: 50%;
+}
 
 /* BG -------------------------------- */
 
