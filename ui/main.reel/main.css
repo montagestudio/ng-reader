@@ -95,7 +95,8 @@
  * ListItem ArticlePreview Hightlight
  */
 
-[data-montage-skin="dark"] .highlight {
+[data-montage-skin="dark"] .highlight,
+[data-montage-skin="dark"] .highlight.active {
     box-shadow: inset 2px 0 0 hsl(210,100%,50%);
 }
 
