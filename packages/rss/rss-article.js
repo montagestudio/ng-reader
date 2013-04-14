@@ -40,6 +40,12 @@ exports.RssArticle = Montage.create(Montage, {
             this.description = rssData.description;
             this.link = rssData.link;
             this.media = rssData.enclosure;
+            // Kind of sucks to solve urls like this but we don't have a better
+            // solution at the moment.
+            if (this.media && this.media.url &&
+                !this.media.url.match(/^https?:\/\//i)) {
+                this.media.url = require.location + this.media.url;
+            }
             this.author = rssData.author;
             this.date = new Date(rssData.pubDate);
             this.isRead = false;
