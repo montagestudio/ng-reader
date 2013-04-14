@@ -3,10 +3,6 @@ var Montage = require("montage").Montage,
 
 exports.RssController = Montage.create(Montage, {
 
-    articleCount: {
-        value: 10
-    },
-
     filterTerm: {
         value: null
     },
@@ -99,7 +95,6 @@ exports.RssController = Montage.create(Montage, {
 
             this.addOwnPropertyChangeListener("_articles", this, false);
             this.addOwnPropertyChangeListener("filterTerm", this, false);
-            this.addOwnPropertyChangeListener("articleCount", this, false);
         }
     },
 
@@ -107,14 +102,13 @@ exports.RssController = Montage.create(Montage, {
         value: function(value, key) {
             var self = this;
 
-            if ((key === "_articles" || key === "filterTerm" ||
-                key === "articleCount")) {
+            if (key === "_articles" || key === "filterTerm") {
                 if (this._articles) {
                     this.articles = this._articles.filter(function(article) {
                         return !self.filterTerm ||
                             article.title.toLowerCase()
                                 .indexOf(self.filterTerm.toLowerCase()) >= 0;
-                    }).slice(0, this.articleCount);
+                    });
                 } else {
                     this.articles = [];
                 }
