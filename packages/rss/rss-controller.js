@@ -29,7 +29,7 @@ exports.RssController = Montage.create(Montage, {
             "feed": "trailers"
         }, {
             "name": "Photo of the Day",
-            "feed": "ng-podd"
+            "feed": "podd"
         }]
     },
 
