@@ -8,5 +8,13 @@
             "url": "assets/images/kids/passport-baobab-kids.jpg"
         },
         "link": "http://kidsblogs.nationalgeographic.com/blog/passport-to-roam/"
+    }, {
+        "title": "Leopard",
+        "description": "National Geographic's Big Cats Initiative is dedicated to halting the decline of big cats through on-the-ground conservation projects and education.",
+        "enclosure": {
+            "type": "video/webm",
+            "url": "assets/videos/leopard.webm"
+        },
+        "link": "http://www.youtube.com/watch?v=FAD6LhUAIZU"
     }]
 }
