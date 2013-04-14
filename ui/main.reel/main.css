@@ -31,6 +31,11 @@
     }
 }
 
+[data-montage-skin="dark"] .digit-ListItem.active {
+    box-shadow: none;
+    background: hsl(0,0%,23%);
+}
+
 
 /* Header ------------------------------------------- */
 
