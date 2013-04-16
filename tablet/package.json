@@ -7,7 +7,7 @@
         "digit": "0.2.0-alpha"
     },
     "mappings": {
-        "rss": "packages/rss"
+        "rss": "../packages/rss"
     },
     "devDependencies": {
         "montage-testing": "0.2.0-alpha"
