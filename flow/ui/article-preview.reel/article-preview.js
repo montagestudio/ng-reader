@@ -13,18 +13,14 @@ var Montage = require("montage").Montage,
 */
 exports.ArticlePreview = Montage.create(Component, /** @lends module:"ui/article-preview.reel".ArticlePreview# */ {
 
-    _article: {
-        value: null
+    didCreate: {
+        value: function () {
+            this.defineBinding("image", {"<-": "article.media.thumbnailUrl"});
+        }
     },
 
     article: {
-        get: function () {
-            return this._article;
-        },
-        set: function (value) {
-            this._article = value;
-            this.image = value.media.thumbnailUrl;
-        }
+        value: null
     },
 
     _image: {
