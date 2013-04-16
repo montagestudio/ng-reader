@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Main</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <script type="text/montage-serialization">
+        {
+            "owner": {
+                "properties": {
+                    "element": {"#": "main"}
+                }
+            },
+
+            "rssController": {
+                "prototype": "rss/rss-controller",
+                "properties": {
+                    "feed": "podd"
+                }
+            },
+
+            "articleListController": {
+                "prototype": "montage/core/range-controller",
+                "properties": {
+                    "avoidsEmptySelection": true
+                },
+                "bindings": {
+                    "content": {"<-": "@rssController.articles"},
+                    "selection": {"<-": "selection.length > 0 ? selection : [content[0]]"}
+                }
+            },
+
+            "articleFlow": {
+                "prototype": "matte/ui/flow.reel",
+                "properties": {
+                    "element": {"#": "articleFlow"},
+                    "isSelectionEnabled": true,
+                    "hasSelectedIndexScrolling": true,
+                    "contentController": {"@": "articleListController"},
+                    "paths": [
+                        {
+                            "knots": [
+                                {
+                                    "knotPosition": [-900, 0, 0],
+                                    "nextHandlerPosition": [-300, 0, 0],
+                                    "previousDensity": 5,
+                                    "nextDensity": 5,
+                                    "rotateY": 1.5
+                                },
+                                {
+                                    "knotPosition": [900, 0, 0],
+                                    "previousHandlerPosition": [300, 0, 0],
+                                    "previousDensity": 5,
+                                    "nextDensity": 5,
+                                    "rotateY": -1.5
+                                }
+                            ],
+                            "headOffset": 2.5,
+                            "tailOffset": 2.5,
+                            "units": {
+                                "rotateY": ""
+                            }
+                        }
+                    ]
+                }
+            },
+
+            "image": {
+                "prototype": "matte/ui/image.reel",
+                "properties": {
+                    "element": {"#": "image"}
+                },
+                "bindings": {
+                    "src": {"<-": "@articleFlow.objectAtCurrentIteration.media.url"}
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div data-montage-id="main" class="rssDemo-Main">
+        <div data-montage-id="articleFlow" class="articleFlow">
+            <img data-montage-id="image" class="articleImage">
+        </div>
+        <div data-montage-id="rssView" class="rssDemo-Main-rssView" data-montage-skin="light"></div>
+    </div>
+</body>
+</html>

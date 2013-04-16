@@ -1,0 +1,11 @@
+.articleFlow {
+    width: 1000px;
+    height: 700px;
+    border: 1px solid red;
+}
+
+.articleImage {
+    position: absolute;
+    width: 300px;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+}

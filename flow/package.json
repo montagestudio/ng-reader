@@ -1,0 +1,14 @@
+{
+    "name": "flow-demo",
+    "version": "0.1.0",
+    "mappings": {
+        "rss": "../packages/rss",
+        "montage": "../node_modules/montage",
+        "digit": "../node_modules/digit",
+        "matte": "../node_modules/matte"
+    },
+    "exclude": [
+        "run-tests.html",
+        "test"
+    ]
+}

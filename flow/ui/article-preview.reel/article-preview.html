@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="article-preview.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "article-preview"}
+            },
+            "bindings": {
+                "classList.has('highlight')": {"<-": "!article.isRead"}
+            }
+        },
+
+        "title": {
+            "prototype": "digit/ui/text.reel",
+            "properties": {
+                "element": {"#": "title"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.article.title"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <ul>
+        <li data-montage-id="article-preview" class="ArticlePreview digit-ListItem">
+            <label data-montage-id="title"></label>
+        </li>
+    </ul>
+</body>
+</html>
