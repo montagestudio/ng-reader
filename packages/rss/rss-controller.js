@@ -1,6 +1,10 @@
 var Montage = require("montage").Montage,
     RssArticle = require("./rss-article").RssArticle;
 
+require("samples/kids.json");
+require("samples/podd.json");
+require("samples/space.json");
+
 exports.RssController = Montage.create(Montage, {
 
     filterTerm: {
@@ -55,30 +59,27 @@ exports.RssController = Montage.create(Montage, {
 
     sample: {
         set: function(value) {
-            var self = this;
-
             if (value in this._samples) {
                 this.title = this._samples[value].title;
                 this._articles = this._samples[value].articles;
             } else {
                 this._sample = value;
 
-                require.async("samples/" + value).then(function(rssData) {
-                    var articles = [];
+                var rssData = require("samples/" + value);
+                var articles = [];
 
-                    self.title = rssData.title;
-                    for (var i = 0; i < rssData.articles.length; i++) {
-                        articles.push(
-                            RssArticle.create().init(rssData.articles[i], self.feed)
-                        );
-                    }
-                    self._articles = articles;
+                this.title = rssData.title;
+                for (var i = 0; i < rssData.articles.length; i++) {
+                    articles.push(
+                        RssArticle.create().init(rssData.articles[i], this.feed)
+                    );
+                }
+                this._articles = articles;
 
-                    self._samples[value] = {
-                        title: rssData.title,
-                        articles: articles
-                    };
-                }).done();
+                this._samples[value] = {
+                    title: rssData.title,
+                    articles: articles
+                };
             }
         },
         get: function() {
