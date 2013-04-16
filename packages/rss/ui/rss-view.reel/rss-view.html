@@ -12,6 +12,16 @@
             }
         },
 
+        "substitution": {
+            "prototype": "montage/ui/substitution.reel",
+            "properties": {
+                "element": {"#": "substitution"}
+            },
+            "bindings": {
+                "switchValue": {"<-": "!!@owner.article ? 'article' : 'cover'"}
+            }
+        },
+
         "title": {
             "prototype": "digit/ui/title.reel",
             "properties": {
@@ -80,15 +90,21 @@
 <body>
     <section data-montage-id="rss-view" class="rss-RssView">
         <header class="rss-RssView-header"></header>
-        <article class="rss-RssView-article">
-            <h2 data-montage-id="title" class="rss-RssView-article-title"></h2>
-            <div data-montage-id="media" class="rss-RssView-article-media">
-                <img data-arg="image" data-montage-id="image" class="rss-RssView-image">
-                <video data-arg="video" data-montage-id="video" controls></video>
-            </div>
-            <p data-montage-id="description" class="rss-RssView-article-description"></p>
-            <div data-montage-id="author" class="rss-RssView-article-author"></div>
-        </article>
+        <div data-montage-id="substitution">
+            <article data-arg="cover" class="rss-RssView-cover">
+                INSERT HUGE BEAUTIFUL YELLOW BORDER HERE
+            </article>
+            <article data-arg="article" class="rss-RssView-article">
+                <h2 data-montage-id="title" class="rss-RssView-article-title"></h2>
+                <div data-montage-id="media" class="rss-RssView-article-media">
+                    <img data-arg="image" data-montage-id="image" class="rss-RssView-image">
+                    <video data-arg="video" data-montage-id="video" controls></video>
+                </div>
+                <p data-montage-id="description" class="rss-RssView-article-description"></p>
+                <div data-montage-id="author" class="rss-RssView-article-author"></div>
+            </article>
+        </div>
+
         <footer class="rss-RssView-footer">
             &copy; 1996-2013 National Geographic Society. All rights reserved.
         </footer>
