@@ -23,8 +23,29 @@ exports.ArticlePreview = Montage.create(Component, /** @lends module:"ui/article
         },
         set: function (value) {
             this._article = value;
-            console.log(value);
+            this.image = value.media.thumbnailUrl;
+        }
+    },
+
+    _image: {
+        value: null
+    },
+
+    image: {
+        get: function () {
+            return this._image;
+        },
+        set: function (value) {
+            this._image = value;
+            this.needsDraw = true;
+        }
+    },
+
+    draw: {
+        value: function () {
+            if (this._image) {
+                this.imageElement.style.backgroundImage = "url(" + this._image  + ")";
+            }
         }
     }
-
 });

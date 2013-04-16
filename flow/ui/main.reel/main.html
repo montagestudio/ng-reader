@@ -28,7 +28,7 @@
                 },
                 "bindings": {
                     "content": {"<-": "@rssController.articles"},
-                    "selection": {"<-": "selection.length > 0 ? selection : [content[0]]"}
+                    "selection": {"<-": "selection"}
                 }
             },
 
@@ -36,29 +36,28 @@
                 "prototype": "matte/ui/flow.reel",
                 "properties": {
                     "element": {"#": "articleFlow"},
-                    "isSelectionEnabled": true,
-                    "hasSelectedIndexScrolling": true,
                     "contentController": {"@": "articleListController"},
+                    "boundingBoxSize": [100000,100000,100000],
                     "paths": [
                         {
                             "knots": [
                                 {
-                                    "knotPosition": [-900, 0, 0],
-                                    "nextHandlerPosition": [-300, 0, 0],
-                                    "previousDensity": 5,
-                                    "nextDensity": 5,
-                                    "rotateY": 1.5
+                                    "knotPosition": [-9000, 0, 0],
+                                    "nextHandlerPosition": [-3000, 0, 0],
+                                    "previousDensity": 50,
+                                    "nextDensity": 50,
+                                    "rotateY": 0
                                 },
                                 {
-                                    "knotPosition": [900, 0, 0],
-                                    "previousHandlerPosition": [300, 0, 0],
-                                    "previousDensity": 5,
-                                    "nextDensity": 5,
-                                    "rotateY": -1.5
+                                    "knotPosition": [9000, 0, 0],
+                                    "previousHandlerPosition": [3000, 0, 0],
+                                    "previousDensity": 50,
+                                    "nextDensity": 50,
+                                    "rotateY": 0
                                 }
                             ],
-                            "headOffset": 2.5,
-                            "tailOffset": 2.5,
+                            "headOffset": 25,
+                            "tailOffset": 25,
                             "units": {
                                 "rotateY": ""
                             }
@@ -66,25 +65,33 @@
                     ]
                 }
             },
-
-            "image": {
-                "prototype": "matte/ui/image.reel",
+            "slide": {
+                "prototype": "ui/article-preview.reel",
                 "properties": {
-                    "element": {"#": "image"}
+                    "element": {"#": "slide"}
                 },
                 "bindings": {
-                    "src": {"<-": "@articleFlow.objectAtCurrentIteration.media.url"}
+                    "article": {"<-": "@articleFlow.objectAtCurrentIteration"}
+                }
+            },
+            "background": {
+                "prototype": "matte/ui/image.reel",
+                "properties": {
+                    "element": {"#": "background"}
+                },
+                "bindings": {
+                    "src": {"<-": "@articleListController.selection.0.media.thumbnailUrl"}
                 }
             }
         }
     </script>
 </head>
 <body>
-    <div data-montage-id="main" class="rssDemo-Main">
+    <div data-montage-id="main" class="flowDemo">
+        <image data-montage-id="background" class="background">
         <div data-montage-id="articleFlow" class="articleFlow">
-            <img data-montage-id="image" class="articleImage">
+            <img data-montage-id="slide" class="articleSlide">
         </div>
-        <div data-montage-id="rssView" class="rssDemo-Main-rssView" data-montage-skin="light"></div>
     </div>
 </body>
 </html>

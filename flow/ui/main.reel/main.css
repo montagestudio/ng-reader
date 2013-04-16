@@ -1,11 +1,74 @@
+.flowDemo {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(50%, #eee), to(#fff));
+    }
+
 .articleFlow {
-    width: 1000px;
-    height: 700px;
-    border: 1px solid red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
-.articleImage {
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: .2;
+}
+
+.articleSlide {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
     position: absolute;
-    width: 300px;
+    padding: 10px;
+    width: 240px;
+    height: 380px;
+    border: 50px solid transparent;
     -webkit-transform: translate3d(-50%, -50%, 0);
+    background: transparent;
+    -webkit-transition: 500ms all;
+}
+
+.selected .articleSlide {
+    border: 50px solid #fc0;
+    background: white;
+}
+
+.articleSlide .image {
+    display: block;
+    background-size: auto 200px;
+    background-repeat: no-repeat;
+    border: 8px solid white;
+    margin-left: -8px;
+    margin-top: -8px;
+    width: 240px;
+    height: 200px;
+    position: absolute;
+}
+
+.articleSlide .title {
+    display: block;
+    font-size: 30px;
+    line-height: 40px;
+    position: absolute;
+    bottom: 100px;
+    width: 240px;
+}
+
+.articleSlide .description {
+    position: absolute;
+    bottom: 15px;
+    display: block;
+    height: 80px;
+    width: 240px;
+    overflow: hidden;
 }

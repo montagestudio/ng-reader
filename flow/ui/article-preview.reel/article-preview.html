@@ -7,30 +7,38 @@
     {
         "owner": {
             "properties": {
-                "element": {"#": "article-preview"}
-            },
-            "bindings": {
-                "classList.has('highlight')": {"<-": "!article.isRead"}
+                "element": {"#": "article-preview"},
+                "imageElement": {"#": "image"}
             }
         },
 
         "title": {
-            "prototype": "digit/ui/text.reel",
+            "prototype": "montage/ui/text.reel",
             "properties": {
                 "element": {"#": "title"}
             },
             "bindings": {
                 "value": {"<-": "@owner.article.title"}
             }
+        },
+
+        "description": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "description"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.article.description"}
+            }
         }
     }
     </script>
 </head>
 <body>
-    <ul>
-        <li data-montage-id="article-preview" class="ArticlePreview digit-ListItem">
-            <label data-montage-id="title"></label>
-        </li>
-    </ul>
+    <div data-montage-id="article-preview">
+        <div data-montage-id="image" class="image"></div>
+        <span data-montage-id="title" class="title"></span>
+        <span data-montage-id="description" class="description"></span>
+    </div>
 </body>
 </html>
