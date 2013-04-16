@@ -15,7 +15,7 @@
             },
 
             "rssController": {
-                "prototype": "rss/rss-controller",
+                "prototype": "ng-rss/rss-controller",
                 "bindings": {
                     "filterTerm": {"<-": "@searchTermInput.value"},
                     "feed": {"<->": "@feedSelect.value"}
@@ -87,7 +87,7 @@
             },
 
             "rssView": {
-                "prototype": "rss/ui/rss-view.reel",
+                "prototype": "ng-rss/ui/rss-view.reel",
                 "properties": {
                     "element": {"#": "rssView"}
                 },
