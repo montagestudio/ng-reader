@@ -45,7 +45,9 @@ exports.RssArticle = Montage.create(Montage, {
             if (this.media && this.media.url &&
                 !this.media.url.match(/^https?:\/\//i)) {
                 this.media.url = require.location + this.media.url;
-                this.media.thumbnailUrl = this.media.url.substr(0, this.media.url.length - 4) + "_small.jpg";
+                if (this.media.thumbnailUrl) {
+                    this.media.thumbnailUrl = require.location + this.media.thumbnailUrl;
+                }
             }
             this.author = rssData.author;
             this.date = new Date(rssData.pubDate);
