@@ -99,6 +99,10 @@ exports.RssController = Montage.create(Montage, {
 
             this.addOwnPropertyChangeListener("_articles", this, false);
             this.addOwnPropertyChangeListener("filterTerm", this, false);
+
+            if (!this.feed) {
+                this.feed = "podd";
+            }
         }
     },
 
