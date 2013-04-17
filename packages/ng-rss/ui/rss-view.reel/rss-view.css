@@ -114,6 +114,7 @@
     -webkit-hyphens: auto;
     color: hsl(0,0%,30%);
     text-shadow: 0 1px 0 hsla(0,0%,100%,.6);
+    clear: both; /* because the video is float: left */
 }
 
 .rss-RssView-article-author {
@@ -134,7 +135,10 @@
     color: hsla(0,0%,0%,.5);
 }
 
-
+.rss-RssView .digit-Video {
+    width: 600px;
+    height: 337px;
+}
 
 /* Cover -------------------------------- */
 
