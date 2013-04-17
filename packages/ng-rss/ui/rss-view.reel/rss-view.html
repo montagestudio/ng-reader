@@ -60,7 +60,7 @@
             },
             "bindings": {
                 "switchValue": {
-                    "<-": "(@owner.article.media.type == 'image/jpeg' || @owner.article.media.type == 'image/gif' || @owner.article.media.type == 'image/png') ? 'image' : (@owner.article.media.type == 'video/webm' ? 'video' : '')"
+                    "<-": "(@owner.article.media.type == 'image/jpeg' || @owner.article.media.type == 'image/gif' || @owner.article.media.type == 'image/png') ? 'image' : ((@owner.article.media.type == 'video/webm' || @owner.article.media.type == 'video/mp4') ? 'video' : '')"
                 }
             }
         },
@@ -78,10 +78,12 @@
         "video": {
             "prototype": "digit/ui/video.reel",
             "properties": {
-                "element": {"#": "video"}
+                "element": {"#": "video"},
+                "autoplay": false
             },
             "bindings": {
-                "src": {"<-": "@owner.article.media.url"}
+                "src": {"<-": "@owner.article.media.url"},
+                "poster": {"<-": "@owner.article.media.thumbnailUrl"}
             }
         }
     }
