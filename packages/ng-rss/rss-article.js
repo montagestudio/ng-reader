@@ -1,5 +1,9 @@
 var Montage = require("montage").Montage;
 
+var ASSETS_ROOT = require.location;
+//var ASSETS_ROOT = "http://everholt.local:8081/rss-demo/packages/ng-rss/";
+
+
 exports.RssArticle = Montage.create(Montage, {
     feed: {
         value: null
@@ -44,9 +48,9 @@ exports.RssArticle = Montage.create(Montage, {
             // solution at the moment.
             if (this.media && this.media.url &&
                 !this.media.url.match(/^https?:\/\//i)) {
-                this.media.url = require.location + this.media.url;
+                this.media.url = ASSETS_ROOT + this.media.url;
                 if (this.media.thumbnailUrl) {
-                    this.media.thumbnailUrl = require.location + this.media.thumbnailUrl;
+                    this.media.thumbnailUrl = ASSETS_ROOT + this.media.thumbnailUrl;
                 }
             }
             this.author = rssData.author;
