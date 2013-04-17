@@ -38,43 +38,41 @@
 }
 
 
+/* Media -------------------------------- */
+
 .rss-RssView-article-media {
     margin: 0 0 20px 0;
     max-width: 100%;
 }
-@media (min-width: 1000px) {
-    .rss-RssView-article-media {
-        float: left;
-        margin: 0 20px 20px 0;
-    }
-}
 
-.rss-RssView-article-description {
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.4;
-    text-rendering: optimizeLegibility;
-    word-wrap: break-word;
-    -webkit-hyphens: auto;
-    color: hsl(0,0%,30%);
-    text-shadow: 0 1px 0 hsla(0,0%,100%,.6);
-}
-
-.rss-RssView-article-author {
-    clear: left;
-    margin: 20px 0;
-    color: hsl(0,0%,60%);
-    font-style: italic;
-}
-
-.rss-RssView.podd .rss-RssView-article img {
+.rss-RssView.podd .rss-RssView-article-media img {
     width: 100%;
 }
 
-.rss-RssView.space .rss-RssView-article img,
-.rss-RssView.kids .rss-RssView-article img {
-    max-width: 50%;
+.rss-RssView.space .rss-RssView-article-media img,
+.rss-RssView.kids .rss-RssView-article-media img {
+    max-width: 100%;
 }
+
+
+@media (min-width: 1000px) { /* Larger screens than 1000px */
+    
+    .rss-RssView-article-media {
+        float: left;
+    }
+    
+    .rss-RssView.space .rss-RssView-article-media,
+    .rss-RssView.kids .rss-RssView-article-media {
+        max-width: 50%;
+        margin: 0 20px 20px 0;
+    }
+    
+}
+
+
+
+
+/* Fullscreen -------------------------------- */
 
 .rss-RssView.fullscreen {
     width: auto;
@@ -92,9 +90,30 @@
 }
 
 @-webkit-keyframes pop {
-0% {
-    -webkit-transform: scale(.8);
+    0% {
+        -webkit-transform: scale(.8);
+    }
 }
+
+
+/* Text -------------------------------- */
+
+.rss-RssView-article-description {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.4;
+    text-rendering: optimizeLegibility;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    color: hsl(0,0%,30%);
+    text-shadow: 0 1px 0 hsla(0,0%,100%,.6);
+}
+
+.rss-RssView-article-author {
+    clear: left;
+    margin: 20px 0;
+    color: hsl(0,0%,60%);
+    font-style: italic;
 }
 
 /* BG -------------------------------- */
