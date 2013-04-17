@@ -8,7 +8,8 @@
     {
         "owner": {
             "properties": {
-                "element": {"#": "rss-view"}
+                "element": {"#": "rss-view"},
+                "_pressComposer": {"@": "pressComposer"}
             }
         },
 
@@ -85,12 +86,20 @@
                 "src": {"<-": "@owner.article.media.url"},
                 "poster": {"<-": "@owner.article.media.thumbnailUrl"}
             }
+        },
+
+        "pressComposer": {
+            "prototype": "montage/composer/press-composer",
+            "properties": {
+                "component": {"@": "image"}
+            }
         }
+
     }
     </script>
 </head>
 <body>
-    <section data-montage-id="rss-view" class="rss-RssView">
+    <section data-montage-skin="dark" data-montage-id="rss-view" class="rss-RssView">
         <header class="rss-RssView-header"></header>
         <div data-montage-id="substitution">
             <article data-arg="cover" class="rss-RssView-cover">

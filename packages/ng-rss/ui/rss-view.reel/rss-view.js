@@ -38,17 +38,43 @@ exports.RssView = Montage.create(Component, /** @lends module:"ui/rss-view.reel"
         }
     },
 
-    _enterFullscreenMode: {
+    enterDocument: {
+        value: function(firstTime) {
+            if(firstTime) {
+                this._pressComposer.addEventListener("pressStart", this, false);
+                this._pressComposer.addEventListener("press", this, false);
+            }
+        }
+    },
+
+
+    _touchmove: {
         value: function() {
-            this.classList.toggle("fullscreen");
+            this._moved = true;
+            console.log("_touchmove", this._moved);
         }
     },
 
     templateDidLoad: {
         value: function() {
             var element = this.templateObjects.image.element;
+            element.addEventListener("touchmove", this._touchmove.bind(this), false);
+        }
+    },
 
-            element.addEventListener("touchstart", this._enterFullscreenMode.bind(this), false);
+    handlePressStart: {
+        value: function() {
+            this._moved = false;
+            console.log("handlePressStart", this._moved);
+        }
+    },
+
+    handlePress: {
+        value: function() {
+            console.log("handlePress", this._moved);
+            if(this._moved !== true) {
+                this.classList.toggle("fullscreen");
+            }
         }
     }
 });
