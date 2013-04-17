@@ -31,7 +31,7 @@ exports.RssController = Montage.create(Montage, {
             "name": "Space",
             "feed": "space"
         }, {
-            "name": "Kids",
+            "name": "Big Cats Love",
             "feed": "kids"
         }]
     },
