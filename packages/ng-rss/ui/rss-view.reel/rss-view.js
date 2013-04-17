@@ -51,7 +51,6 @@ exports.RssView = Montage.create(Component, /** @lends module:"ui/rss-view.reel"
     _touchmove: {
         value: function() {
             this._moved = true;
-            console.log("_touchmove", this._moved);
         }
     },
 
@@ -65,13 +64,11 @@ exports.RssView = Montage.create(Component, /** @lends module:"ui/rss-view.reel"
     handlePressStart: {
         value: function() {
             this._moved = false;
-            console.log("handlePressStart", this._moved);
         }
     },
 
     handlePress: {
         value: function() {
-            console.log("handlePress", this._moved);
             if(this._moved !== true) {
                 this.classList.toggle("fullscreen");
             }
