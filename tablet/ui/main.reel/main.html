@@ -1,101 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Main</title>
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+        Main
+    </title>
     <link rel="stylesheet" type="text/css" href="main.css">
-
     <script type="text/montage-serialization">
-        {
-            "owner": {
-                "properties": {
-                    "element": {"#": "main"}
-                }
+    {
+        "owner": {
+            "prototype": "ui/main.reel",
+            "properties": {
+                "element": {"#": "main"}
+            }
+        },
+        "articleCount": {
+            "prototype": "digit/ui/badge.reel",
+            "properties": {
+                "element": {"#": "articleCount"}
             },
-
-            "rssController": {
-                "prototype": "ng-rss/rss-controller",
-                "bindings": {
-                    "filterTerm": {"<-": "@searchTermInput.value"},
-                    "feed": {"<->": "@feedSelect.value"}
-                }
+            "bindings": {
+                "value": {"<-": "@rssController.articles.filter{!isRead}.length"}
+            }
+        },
+        "articleList": {
+            "prototype": "digit/ui/list.reel",
+            "properties": {
+                "element": {"#": "articleList"},
+                "contentController": {"@": "articleListController"},
+                "isSelectionEnabled": true
+            }
+        },
+        "articleListController": {
+            "prototype": "montage/core/range-controller",
+            "properties": {
+                "avoidsEmptySelection": true
             },
-
-            "articleListController": {
-                "prototype": "montage/core/range-controller",
-                "properties": {
-                    "avoidsEmptySelection": true
-                },
-                "bindings": {
-                    "content": {"<-": "@rssController.articles"}
-                }
+            "bindings": {
+                "content": {"<-": "@rssController.articles"}
+            }
+        },
+        "articlePreview": {
+            "prototype": "ui/article-preview.reel",
+            "properties": {
+                "element": {"#": "articlePreview"}
             },
-
-            "feedSelectController": {
-                "prototype": "montage/core/range-controller",
-                "bindings": {
-                    "content": {"<-": "@rssController.feeds"}
-                }
+            "bindings": {
+                "article": {"<-": "@articleList.objectAtCurrentIteration"}
+            }
+        },
+        "feedSelect": {
+            "prototype": "digit/ui/select.reel",
+            "properties": {
+                "element": {"#": "feedSelect"},
+                "contentController": {"@": "feedSelectController"},
+                "labelPropertyName": "name",
+                "textPropertyPath": "name",
+                "valuePropertyPath": "feed"
+            }
+        },
+        "feedSelectController": {
+            "prototype": "montage/core/range-controller",
+            "bindings": {
+                "content": {"<-": "@rssController.feeds"}
+            }
+        },
+        "rssController": {
+            "prototype": "ng-rss/rss-controller",
+            "bindings": {
+                "feed": {"<->": "@feedSelect.value.feed"},
+                "filterTerm": {"<-": "@searchTermInput.value"}
+            }
+        },
+        "rssView": {
+            "prototype": "ng-rss/ui/rss-view.reel",
+            "properties": {
+                "element": {"#": "rssView"}
             },
-
-            "searchTermInput": {
-                "prototype": "digit/ui/text-field.reel",
-                "properties": {
-                    "element": {"#": "searchTermInput"},
-                    "placeholder": "Filter"
-                }
-            },
-
-            "articleCount": {
-                "prototype": "digit/ui/badge.reel",
-                "properties": {
-                    "element": {"#": "articleCount"}
-                },
-                "bindings": {
-                    "value": {"<-": "@rssController.articles.filter{!isRead}.length"}
-                }
-            },
-
-            "feedSelect": {
-                "prototype": "digit/ui/select.reel",
-                "properties": {
-                    "element": {"#": "feedSelect"},
-                    "contentController": {"@": "feedSelectController"},
-                    "textPropertyPath": "name",
-                    "valuePropertyPath": "feed"
-                }
-            },
-
-            "articleList": {
-                "prototype": "digit/ui/list.reel",
-                "properties": {
-                    "element": {"#": "articleList"},
-                    "isSelectionEnabled": true,
-                    "contentController": {"@": "articleListController"}
-                }
-            },
-
-            "articlePreview": {
-                "prototype": "ui/article-preview.reel",
-                "properties": {
-                    "element": {"#": "articlePreview"}
-                },
-                "bindings": {
-                    "article": {"<-": "@articleList.objectAtCurrentIteration"}
-                }
-            },
-
-            "rssView": {
-                "prototype": "ng-rss/ui/rss-view.reel",
-                "properties": {
-                    "element": {"#": "rssView"}
-                },
-                "bindings": {
-                    "article": {"<-": "@articleListController.selection.0"}
-                }
+            "bindings": {
+                "article": {"<-": "@articleListController.selection.0"}
+            }
+        },
+        "searchTermInput": {
+            "prototype": "digit/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "searchTermInput"},
+                "placeholder": "Filter"
             }
         }
+    }
     </script>
 </head>
 <body>
