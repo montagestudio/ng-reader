@@ -68,7 +68,7 @@
         "rssController": {
             "prototype": "ng-rss/rss-controller",
             "bindings": {
-                "feed": {"<->": "@feedSelect.value.feed"},
+                "feed": {"<->": "@feedSelectController.selection.0.feed"},
                 "filterTerm": {"<-": "@searchTermInput.value"}
             }
         },
