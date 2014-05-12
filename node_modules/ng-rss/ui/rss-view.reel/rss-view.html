@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="../../assets/fonts/fonts.css" rel="stylesheet">
+    <link href="rss-view.css" rel="stylesheet">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "prototype": "ui/rss-view.reel",
+            "properties": {
+                "element": {"#": "rss-view"},
+                "_pressComposer": {"@": "pressComposer"}
+            }
+        },
+        "author": {
+            "prototype": "digit/ui/text.reel",
+            "properties": {
+                "element": {"#": "author"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.article.author"}
+            }
+        },
+        "description": {
+            "prototype": "matte/ui/dynamic-element.reel",
+            "properties": {
+                "element": {"#": "description"},
+                "allowedTagNames": [
+                    "p",
+                    "i",
+                    "h3"
+                ]
+            },
+            "bindings": {
+                "innerHTML": {"<-": "@owner.article.description"}
+            }
+        },
+        "image": {
+            "prototype": "matte/ui/image.reel",
+            "properties": {
+                "element": {"#": "image"}
+            },
+            "bindings": {
+                "src": {"<-": "@owner.article.media.url"}
+            }
+        },
+        "media": {
+            "prototype": "montage/ui/substitution.reel",
+            "properties": {
+                "element": {"#": "media"}
+            },
+            "bindings": {
+                "switchValue": {"<-": "(@owner.article.media.type == 'image/jpeg' || @owner.article.media.type == 'image/gif' || @owner.article.media.type == 'image/png') ? 'image' : ((@owner.article.media.type == 'video/webm' || @owner.article.media.type == 'video/mp4') ? 'video' : '')"}
+            }
+        },
+        "pressComposer": {
+            "prototype": "montage/composer/press-composer",
+            "properties": {
+                "component": {"@": "image"}
+            }
+        },
+        "substitution": {
+            "prototype": "montage/ui/substitution.reel",
+            "properties": {
+                "element": {"#": "substitution"}
+            },
+            "bindings": {
+                "switchValue": {"<-": "!!@owner.article ? 'article' : 'cover'"}
+            }
+        },
+        "title": {
+            "prototype": "digit/ui/title.reel",
+            "properties": {
+                "element": {"#": "title"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.article.title"}
+            }
+        },
+        "videoPlayer": {
+            "prototype": "matte/ui/video-player.reel",
+            "properties": {
+                "element": {"#": "video"}
+            },
+            "bindings": {
+                "poster": {"<-": "@owner.article.media.thumbnailUrl"},
+                "src": {"<-": "@owner.article.media.url"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <section data-montage-skin="dark" data-montage-id="rss-view" class="rss-RssView">
+        <header class="rss-RssView-header"></header>
+        <div data-montage-id="substitution">
+            <article data-arg="cover" class="rss-RssView-cover">
+                <div class="rss-RssView-cover-frame"></div>
+                <div class="rss-RssView-cover-shadow"></div>
+            </article>
+            <article data-arg="article" class="rss-RssView-article">
+                <h2 data-montage-id="title" class="rss-RssView-article-title"></h2>
+                <div data-montage-id="media" class="rss-RssView-article-media">
+                    <img data-arg="image" data-montage-id="image" class="rss-RssView-image" src="fs://localhost/Users/mike/Projects/rss-demo/packages/ng-rss/ui/rss-view.reel/">
+                    <video data-montage-id="video" data-arg="video"></video>
+                </div>
+                <p data-montage-id="description" class="rss-RssView-article-description"></p>
+                <div data-montage-id="author" class="rss-RssView-article-author"></div>
+            </article>
+        </div>
+        <footer class="rss-RssView-footer">
+            © 1996-2013 National Geographic Society. All rights reserved.
+        </footer>
+    </section>
+</body>
+</html>

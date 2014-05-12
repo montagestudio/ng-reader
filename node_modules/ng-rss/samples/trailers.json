@@ -1,0 +1,32 @@
+{
+    "title": "Latest Movie Trailers",
+    "articles": [{
+        "title": "Eddie: The Sleepwalking Cannibal - Trailer",
+        "description": "When Larsâ€™s art dealer Ronny arranges a teaching job in a small town as a â€œtherapeutic measureâ€ to stir up his creative juices, things don't quite turn out as planned. At first, life in the peaceful small town seems rosy, as he settles in and impresses beautiful fellow colleague Leslie (Georgina Reilly) by taking in the brawny, mute Eddie (Dylan Smith) after the latterâ€™s caregiver passes away. But Lars soon discovers that the faÃ§ade of serenity hides something unimaginable: Eddie suffers from a rare form of sleepwalking that transforms him from a docile, cereal-obsessed art student into a ravenous sleepwalking cannibal. Initially horrified by Eddieâ€™s dark secret, Lars becomes enthralled by the not-so-gentle giant. Exceptional art comes at a very high price...and how far is Lars willing to go for his next masterpiece?",
+        "author": "Apple Inc.",
+        "enclosure": {
+            "type": "image/jpeg",
+            "url": "http://trailers.apple.com/trailers/independent/eddiethesleepwalkingcannibal/images/poster.jpg"
+        },
+        "link": "http://trailers.apple.com/trailers/independent/eddiethesleepwalkingcannibal/"
+    }, {
+        "title": "The Great Gatsby - Trailer 3",
+        "description": "From the uniquely imaginative mind of writer/producer/director Baz Luhrmann comes the new big screen adaptation of F. Scott Fitzgerald's novel, The Great Gatsby. The filmmaker will create his own distinctive visual interpretation of the classic story, bringing the period to life in a way that has never been seen before, in a film starring Leonardo DiCaprio in the title role. \"The Great Gatsby\" follows Fitzgerald-like, would-be writer Nick Carraway as he leaves the Midwest and comes to New York City in the spring of 1922, an era of loosening morals, glittering jazz and bootleg kings. Chasing his own American Dream, Nick lands next door to a mysterious, party-giving millionaire, Jay Gatsby, and across the bay from his cousin, Daisy, and her philandering, blue-blooded husband, Tom Buchanan. It is thus that Nick is drawn into the captivating world of the super-rich, their illusions, loves and deceits. As Nick bears witness, within and without the world he inhabits, he pens a tale of impossible love, incorruptible dreams and high-octane tragedy, and holds a mirror to our own modern times and struggles.",
+        "author": "Apple Inc.",
+        "link": "http://trailers.apple.com/trailers/wb/thegreatgatsby/"
+    }, {
+        "title": "Hannah Arendt - Trailer",
+        "description": "The sublime Barbara Sukowa reteams with director Margarethe von Trotta (Vision,Â Rosa Luxemburg) for her brilliant new biopic of influential German-Jewish philosopher and political theorist Hannah Arendt. Arendtâ€™s reporting on the 1961 trial of ex-Nazi Adolf Eichmann inÂ The New Yorkerâ€”controversial both for her portrayal of Eichmann andÂ the Jewish councilsâ€”introduced her now-famous concept of the â€œBanality of Evil.â€ Using footage from the actual Eichmann trial and weaving a narrative that spans three countries, von Trotta beautifully turns the often invisible passion for thought into immersive, dramatic cinema.",
+        "author": "Apple Inc.",
+        "enclosure": {
+            "type": "image/jpeg",
+            "url": "http://trailers.apple.com/trailers/independent/hannaharendt/images/poster.jpg"
+        },
+        "link": "http://trailers.apple.com/trailers/independent/hannaharendt/"
+    }, {
+        "title": "Caroline and Jackie - Trailer",
+        "description": "On a celebratory birthday trip, Caroline visits her sister, Jackie, and her boyfriend. What starts out as a fun evening with close friends quickly goes askew. Caroline and the group attempt to support Jackie for an apparent illnessâ€”though it's unclear who really needs the most help.",
+        "author": "Apple Inc.",
+        "link": "http://trailers.apple.com/trailers/independent/carolineandjackie/"
+    }]
+}

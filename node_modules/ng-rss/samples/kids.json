@@ -1,0 +1,67 @@
+{
+    "title": "Amazing Animals",
+    "articles": [{
+        "title": "Shark Attack!",
+        "description": "Twenty years ago, Nick Caloyianis was attacked by a shark while filming for Nat Geo — this is his amazing story.",
+        "enclosure": {
+            "type": "video/mp4",
+            "url": "assets/videos/sharkattack.mp4",
+            "thumbnailUrl": "assets/videos/sharkattack.png"
+        },
+        "link": "http://www.youtube.com/watch?v=NbqyYeNeXcM"
+    }, {
+        "title": "\"Sudden Death\" Cuttlefish",
+        "description": "Crustaceans beware: That piece of coral might be a camouflaged cuttlefish looking for a quick bite.",
+        "enclosure": {
+            "type": "video/mp4",
+            "url": "assets/videos/cuttlefish.mp4",
+            "thumbnailUrl": "assets/videos/cuttlefish.png"
+        },
+        "link": "http://www.youtube.com/watch?v=E-zodF-XrSE"
+    }, {
+        "title": "Rattlesnake vs. Hawk",
+        "description": "This desert showdown pits brains against brawn. Using its wings as a distraction, can a hawk bring down a venomous rattler?",
+        "enclosure": {
+            "type": "video/mp4",
+            "url": "assets/videos/rattlesnakevshawk.mp4",
+            "thumbnailUrl": "assets/videos/rattlesnakevshawk.png"
+        },
+        "link": "http://www.youtube.com/watch?v=_3h8x67I1iw"
+    }, {
+        "title": "Portuguese Man-of-War",
+        "description": "The Portuguese man-of-war is a super-organism: a colony of tiny animals that form a very menacing predator.",
+        "enclosure": {
+            "type": "video/mp4",
+            "url": "assets/videos/portuguese.mp4",
+            "thumbnailUrl": "assets/videos/portuguese.png"
+        },
+        "link": "http://www.youtube.com/watch?v=xTgLTbXJrfM"
+    }, {
+        "title": "Penguin Parent Powers",
+        "description": "When it comes to staying in touch, penguins have the ultimate family plan. Even in a noisy colony of thousands, penguin parents and their chicks can always recognize each other's unique vocalizations.",
+        "enclosure": {
+            "type": "video/mp4",
+            "url": "assets/videos/penguinparent.mp4",
+            "thumbnailUrl": "assets/videos/penguinparent.png"
+        },
+        "link": "http://www.youtube.com/watch?v=jMYQLD89KzM"
+    }, {
+        "title": "Meet the Jesus Christ Lizard",
+        "description": "Thanks to super speed and specially-designed feet, the basilisk lizard can run on water... an ability that makes it deadly to insects, and has led people to call it the \"Jesus Christ Lizard.\"",
+        "enclosure": {
+            "type": "video/mp4",
+            "url": "assets/videos/jesuslizard.mp4",
+            "thumbnailUrl": "assets/videos/jesuslizard.png"
+        },
+        "link": "http://www.youtube.com/watch?v=WpXHpXKZtws"
+    }, {
+        "title": "Fire Ants Make Living Raft",
+        "description": "In this flooded forest, the family that swims together stays together... as a living raft! But plenty of predators see these floating fire ants as an easy snack.",
+        "enclosure": {
+            "type": "video/mp4",
+            "url": "assets/videos/fireants.mp4",
+            "thumbnailUrl": "assets/videos/fireants.png"
+        },
+        "link": "http://www.youtube.com/watch?v=L2ZysgGAABw"
+    }]
+}
