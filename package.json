@@ -7,7 +7,7 @@
         "url": "git+ssh://git@github.com:declarativ/ng-reader.git"
     },
     "dependencies": {
-        "montage": "0.14.10",
+        "montage": "git+ssh://git@github.com:montagejs/montage.git#60753749bbf392557e9fc4f39b3ac969d01a7e96",
         "digit": "0.5.1",
         "ng-rss": "git+ssh://git@github.com:declarativ/ng-rss.git"
     },
